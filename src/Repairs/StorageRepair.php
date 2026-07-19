@@ -13,6 +13,14 @@ class StorageRepair implements Repair
     public function repair(): bool
     {
         try {
+            $publicPath = function_exists('public_path') ? public_path() : base_path('public');
+            $publicStoragePath = rtrim($publicPath, '/') . '/storage';
+
+            if (file_exists($publicStoragePath) && !is_link($publicStoragePath)) {
+                $backupPath = $publicStoragePath . '_backup_' . time();
+                rename($publicStoragePath, $backupPath);
+            }
+
             $exitCode = $this->artisan->call('storage:link');
             return $exitCode === 0;
         } catch (Throwable $e) {
