@@ -87,24 +87,6 @@ php artisan doctor:report --format=markdown
 
 ---
 
-## 🗺️ Roadmap
-
-### Version 1 (Core)
-- **Health Checks**: Cache, Storage, Database, Queue, Mail, App Key, Permissions, Config.
-- **Repair Engine**: Auto-resolve common issues.
-- **Reports**: Health Score & Summary generation.
-
-### Version 2 (CI/CD & DevOps)
-- Docker & CI workflow validation.
-- Structured JSON reporting.
-- GitHub Actions integration.
-
-### Version 3 (Advanced Integration)
-- Web Dashboard.
-- Third-party Plugins.
-- AWS, Nginx, Horizon, and Octane checkers.
-
----
 
 ## 🤝 Contributing
 
